@@ -1,33 +1,11 @@
 'use client'
 
-import { ReactNode } from 'react'
-import { Box, Flex, chakra, Stack, Text, useColorModeValue, VisuallyHidden, Link } from '@chakra-ui/react'
+import { Box, Flex, Stack, Text, useColorModeValue, Link } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
+
 import { PAGE_WIDTH } from '../../utils/constans'
 
-const SocialButton = ({ children, label, href }: { children: ReactNode; label: string; href: string }) => {
-  return (
-    <chakra.button
-      bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
-      rounded={'full'}
-      w={8}
-      h={8}
-      cursor={'pointer'}
-      as={'a'}
-      href={href}
-      display={'inline-flex'}
-      alignItems={'center'}
-      justifyContent={'center'}
-      transition={'background 0.3s ease'}
-      _hover={{
-        bg: useColorModeValue('blackAlpha.200', 'whiteAlpha.200'),
-      }}
-    >
-      <VisuallyHidden>{label}</VisuallyHidden>
-      {children}
-    </chakra.button>
-  )
-}
+import { SocialButton } from '../../components/SocialButton'
 
 export const Footer = () => {
   return (
@@ -45,7 +23,7 @@ export const Footer = () => {
       >
         <Stack
           spacing={2}
-          px={2}
+          px={8}
           py={4}
           direction={{ base: 'column', md: 'row' }}
           justify={{ base: 'center', md: 'space-between' }}

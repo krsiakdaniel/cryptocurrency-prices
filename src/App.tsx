@@ -1,9 +1,12 @@
 import { ChakraProvider, theme } from '@chakra-ui/react'
 
-import { Hero } from './components/Hero'
 import { Navbar } from './layout/Navbar'
 import { Footer } from './layout/Footer'
 import { PageContent } from './layout/PageContent'
+
+import { Hero } from './components/Hero'
+import { MarketTable } from './components/MarketTable'
+import { CoinGecko } from './components/CoinGecko'
 
 export const App = () => (
   <ChakraProvider theme={theme}>
@@ -11,6 +14,8 @@ export const App = () => (
       <Navbar />
       <PageContent>
         <Hero />
+        <MarketTable />
+        <CoinGecko />
       </PageContent>
       <Footer />
     </>

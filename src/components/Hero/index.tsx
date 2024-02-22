@@ -37,19 +37,16 @@ export const Hero = () => {
       .catch((error) => console.error('Error:', error))
   }, [urlCoins])
 
-  console.log(coins)
-
   const linkColor = useColorModeValue('green.400', 'pink.400')
   const hoverColor = useColorModeValue('green.300', 'pink.300')
   const loadingColors = useColorModeValue('white', 'gray.800')
   const colorModeColors = useColorModeValue('green.400', 'pink.400')
 
   return (
-    <Box mb={8}>
+    <Box mb={8} mt={40}>
       <Heading
         as="h1"
         size={{ base: 'xl', sm: '2xl', md: '3xl', lg: '4xl' }}
-        mt={20}
         bg={useColorModeValue('white', 'gray.800')}
         textTransform="uppercase"
       >

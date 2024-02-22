@@ -4,6 +4,9 @@ import { Box, Flex, Text, Button, Stack, useColorModeValue } from '@chakra-ui/re
 
 import { ColorModeSwitcher } from '../../ColorModeSwitcher'
 import { PAGE_WIDTH } from '../../utils/constans'
+import { FaDiscord, FaTwitter } from 'react-icons/fa'
+
+import { SocialButton } from '../../components/SocialButton'
 
 export const Navbar = () => {
   return (
@@ -32,7 +35,7 @@ export const Navbar = () => {
           color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
-          pl={{ base: 2 }}
+          px={{ base: 8 }}
           align={'center'}
         >
           <Flex flex={{ base: 1 }}>
@@ -46,14 +49,27 @@ export const Navbar = () => {
             </Text>
           </Flex>
 
-          <Stack flex={{ base: 1, md: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
+          <Flex>
+            <Box mr={4}>
+              <SocialButton label={'Twitter'} href={'https://twitter.com/coingecko'}>
+                <FaTwitter />
+              </SocialButton>
+            </Box>
+            <Box mr={{ base: 0, sm: 4 }}>
+              <SocialButton label={'Discord'} href={'https://discord.com/invite/EhrkaCH'}>
+                <FaDiscord />
+              </SocialButton>
+            </Box>
+          </Flex>
+
+          <Stack flex={{ base: 0 }} justify={'flex-end'} direction={'row'} spacing={6}>
             <Button
               as={'a'}
               display={{ base: 'none', sm: 'inline-flex' }}
               fontSize={'sm'}
               fontWeight={600}
-              color={'white'}
-              bg={useColorModeValue('green.400', 'pink.400')}
+              color={useColorModeValue('white', 'gray.800')}
+              bg={useColorModeValue('gray.400', 'white')}
               href={'https://www.coingecko.com/'}
               target="_blank"
               size="sm"
@@ -61,7 +77,7 @@ export const Navbar = () => {
                 bg: useColorModeValue('green.400', 'pink.400'),
               }}
             >
-              Go to CoinGecko
+              API by CoinGecko
             </Button>
           </Stack>
 
