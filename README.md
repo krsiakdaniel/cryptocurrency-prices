@@ -4,7 +4,7 @@ Search cryptocurrencies and their current prices 💰
 
 ## Website
 
-👉 Demo: <https://cryptocurrency-prices-three.vercel.app/>
+👉 Demo: <https://cryptocurrency-prices-two.vercel.app/>
 
 ---
 
