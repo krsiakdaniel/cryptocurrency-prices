@@ -3,7 +3,6 @@
 import { Box, Flex, Text, Button, Stack, useColorModeValue } from '@chakra-ui/react'
 
 import { ColorModeSwitcher } from '../../ColorModeSwitcher'
-import { FaGithub } from 'react-icons/fa'
 
 export const Navbar = () => {
   return (
