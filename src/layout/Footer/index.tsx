@@ -30,7 +30,7 @@ const SocialButton = ({ children, label, href }: { children: ReactNode; label: s
 
 export const Footer = () => {
   return (
-    <Box bg={useColorModeValue('white', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
+    <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
       <Stack
         spacing={2}
         px={8}
@@ -48,7 +48,16 @@ export const Footer = () => {
           </Text>
           <Text>
             Powered by{' '}
-            <Link color="blue.600" href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://www.coingecko.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={useColorModeValue('green.400', 'pink.400')}
+              _hover={{
+                textDecoration: 'underline',
+                color: useColorModeValue('green.300', 'pink.300'),
+              }}
+            >
               CoinGecko API
             </Link>
           </Text>
@@ -57,7 +66,16 @@ export const Footer = () => {
         <Flex alignItems="center">
           <Text mr={2}>
             Created by{' '}
-            <Link color="blue.600" href="https://krsiak.cz/" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://krsiak.cz/"
+              target="_blank"
+              rel="noopener noreferrer"
+              color={useColorModeValue('green.400', 'pink.400')}
+              _hover={{
+                textDecoration: 'underline',
+                color: useColorModeValue('green.300', 'pink.300'),
+              }}
+            >
               krsiak.cz
             </Link>
           </Text>

@@ -9,7 +9,7 @@ export const Hero = () => {
         size={{ base: '2xl', sm: '4xl' }}
         noOfLines={1}
         mt={16}
-        bg={useColorModeValue('gray.100', 'gray.800')}
+        bg={useColorModeValue('white', 'gray.800')}
         textTransform="uppercase"
       >
         CryptoMania

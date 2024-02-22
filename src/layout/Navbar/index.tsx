@@ -9,7 +9,7 @@ export const Navbar = () => {
   return (
     <Box as="header" position="fixed" w="full" zIndex={1}>
       <Flex
-        bg={useColorModeValue('white', 'gray.900')}
+        bg={useColorModeValue('gray.50', 'gray.900')}
         color={useColorModeValue('gray.600', 'white')}
         minH={'60px'}
         py={{ base: 2 }}
@@ -38,12 +38,12 @@ export const Navbar = () => {
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
-            bg={'pink.400'}
+            bg={useColorModeValue('green.400', 'pink.400')}
             href={'https://www.coingecko.com/'}
             target="_blank"
             size="sm"
             _hover={{
-              bg: 'pink.300',
+              bg: useColorModeValue('green.400', 'pink.400'),
             }}
           >
             Go to CoinGecko

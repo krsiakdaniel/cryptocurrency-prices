@@ -1,4 +1,4 @@
-import { Box, Grid, useColorModeValue } from '@chakra-ui/react'
+import { Box, useColorModeValue } from '@chakra-ui/react'
 
 type Props = {
   children: React.ReactNode
@@ -16,9 +16,12 @@ const pageWidth = {
 export const PageContent = ({ children }: Props) => {
   return (
     <Box
-      mx="auto"
-      textAlign="center"
+      bg={useColorModeValue('white', 'gray.800')}
       px={8}
+      pt={10}
+      textAlign="center"
+      borderX="1px solid"
+      mx="auto"
       maxWidth={{
         base: '100%',
         sm: pageWidth.sm,
@@ -28,9 +31,7 @@ export const PageContent = ({ children }: Props) => {
         '2xl': pageWidth['2xl'],
       }}
     >
-      <Grid minH="100vh" p={4} pt={10} bg={useColorModeValue('gray.100', 'gray.800')}>
-        {children}
-      </Grid>
+      {children}
     </Box>
   )
 }
