@@ -1,0 +1,23 @@
+# editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*~
+
+# dependencies
+node_modules/
+.npm/
+.pnp/
+.pnp.js
+
+# testing
+coverage/
+
+# production
+dist/
+build/
+_site/
+
+# Ignore all HTML files:
+*.html
