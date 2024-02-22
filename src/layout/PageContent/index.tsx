@@ -1,16 +1,8 @@
 import { Box, useColorModeValue } from '@chakra-ui/react'
+import { PAGE_WIDTH } from '../../utils/constans'
 
 type Props = {
   children: React.ReactNode
-}
-
-const pageWidth = {
-  base: '0px',
-  sm: '480px',
-  md: '768px',
-  lg: '992px',
-  xl: '1280px',
-  '2xl': '1536px',
 }
 
 export const PageContent = ({ children }: Props) => {
@@ -20,15 +12,14 @@ export const PageContent = ({ children }: Props) => {
       px={8}
       pt={10}
       textAlign="center"
-      borderX="1px solid"
       mx="auto"
       maxWidth={{
         base: '100%',
-        sm: pageWidth.sm,
-        md: pageWidth.md,
-        lg: pageWidth.lg,
-        xl: pageWidth.xl,
-        '2xl': pageWidth['2xl'],
+        sm: PAGE_WIDTH.sm,
+        md: PAGE_WIDTH.md,
+        lg: PAGE_WIDTH.lg,
+        xl: PAGE_WIDTH.xl,
+        '2xl': PAGE_WIDTH['2xl'],
       }}
     >
       {children}

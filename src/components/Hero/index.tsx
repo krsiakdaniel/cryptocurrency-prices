@@ -45,11 +45,11 @@ export const Hero = () => {
   const colorModeColors = useColorModeValue('green.400', 'pink.400')
 
   return (
-    <Box>
+    <Box mb={8}>
       <Heading
         as="h1"
         size={{ base: 'xl', sm: '2xl', md: '3xl', lg: '4xl' }}
-        mt={40}
+        mt={20}
         bg={useColorModeValue('white', 'gray.800')}
         textTransform="uppercase"
       >
