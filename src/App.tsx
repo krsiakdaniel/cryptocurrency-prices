@@ -1,33 +1,17 @@
-import { ChakraProvider, Box, Text, Heading, Link, VStack, Grid, theme } from '@chakra-ui/react'
-import { ColorModeSwitcher } from './ColorModeSwitcher'
+import { ChakraProvider, theme } from '@chakra-ui/react'
 
-import { Logo } from './components/Logo'
+import { Hero } from './components/Hero'
+import { Navbar } from './layout/Navbar'
 import { Footer } from './layout/Footer'
+import { PageContent } from './layout/PageContent'
 
 export const App = () => (
   <ChakraProvider theme={theme}>
     <>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3} bg="gray.100">
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <Heading as="h1" size="4xl" noOfLines={1}>
-            CryptoMania
-          </Heading>
-          <Text as="h2" noOfLines={1}>
-            Display current cryptocurrency prices!
-          </Text>
-
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Using{' '}
-              <Link color="blue.600" href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer">
-                CoinGecko API
-              </Link>
-            </Text>
-          </VStack>
-        </Grid>
-      </Box>
+      <Navbar />
+      <PageContent>
+        <Hero />
+      </PageContent>
       <Footer />
     </>
   </ChakraProvider>
