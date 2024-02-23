@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Box, Text, Heading, Flex, Image, Highlight, VStack, useColorModeValue } from '@chakra-ui/react'
 
-import bitcoin256 from '../../assets/images/bitcoin-256.png'
+import { ImageSwapper } from '../ImageSwapper'
 
 import { API_KEY } from '../../utils/constants'
 
@@ -56,7 +56,7 @@ export const Hero = () => {
       </Text>
 
       <VStack mt={8}>
-        <Image boxSize="256px" src={bitcoin256} alt="Bitcoin" />
+        <ImageSwapper />
       </VStack>
 
       <Box mt={20}>
