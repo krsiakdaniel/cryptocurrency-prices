@@ -6,6 +6,7 @@ import { PageContent } from './layout/PageContent'
 
 import { Hero } from './components/Hero'
 import { MarketTable } from './components/MarketTable'
+import { MarketTopCoins } from './components/MarketTopCoins'
 import { CoinGecko } from './components/CoinGecko'
 
 export const App = () => (
@@ -14,6 +15,7 @@ export const App = () => (
       <Navbar />
       <PageContent>
         <Hero />
+        <MarketTopCoins />
         <MarketTable />
         <CoinGecko />
       </PageContent>

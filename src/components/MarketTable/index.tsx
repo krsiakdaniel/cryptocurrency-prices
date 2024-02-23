@@ -18,24 +18,13 @@ import {
 import { useEffect, useState } from 'react'
 import { numberSeparateCommas } from '../../utils/numberSeparateCommas'
 
-import { API_KEY } from '../../utils/constants'
+import { CoinTypeMarket } from '../../utils/constants'
+import { getUrlAPI } from '../../utils/getUrlAPI'
 
-const ROOT_URL = 'https://api.coingecko.com/api/v3'
-const URL_PARAMETER = '&x_cg_demo_api_key='
-const PAGE_LIMIT = 500
-const SPARK_LINE = true
-
-interface CoinType {
-  id: string
-  image: string
-  name: string
-  current_price: number
-  price_change_percentage_24h: number
-  market_cap: number
-}
+const API_PAGE_LIMIT = 500
 
 export const MarketTable = () => {
-  const urlCoins = `${ROOT_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${PAGE_LIMIT}&page=1&sparkline=${SPARK_LINE}&locale=en${URL_PARAMETER}${API_KEY}`
+  const urlCoins = getUrlAPI(API_PAGE_LIMIT)
 
   const [coins, setCoins] = useState([])
   const [loading, setLoading] = useState(true)
@@ -45,7 +34,6 @@ export const MarketTable = () => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        'X-CoinGecko-API-Key': API_KEY,
       },
     })
       .then((response) => response.json())
@@ -70,8 +58,8 @@ export const MarketTable = () => {
         </Flex>
       ) : (
         <Box>
-          <Heading size="lg" mb={4} textTransform="uppercase">
-            Current Market Value
+          <Heading mb={8} textTransform="uppercase" size={{ base: 'xl', sm: '2xl' }}>
+            Market Value
           </Heading>
           <TableContainer>
             <Table size="sm" variant="simple" bg={colorTableRow}>
@@ -85,7 +73,7 @@ export const MarketTable = () => {
               </Thead>
               <Tbody>
                 {coins &&
-                  coins.map((coin: CoinType) => {
+                  coins.map((coin: CoinTypeMarket) => {
                     return (
                       <Tr key={coin.id} _hover={{ background: colorTableRowHover }}>
                         <Td>
