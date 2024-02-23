@@ -46,8 +46,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## 🖼️ Screenshots
 
-Few screenshots.
+Project screenshots.
 
-![crypto-1](/screenshot-1.png)
+![screenshot-1](/screenshot-1.png)
 
-![crypto-2](/screenshot-2.png)
+![screenshot-2](/screenshot-2.png)
+
+![screenshot-3](/screenshot-3.png)
+
+![screenshot-4](/screenshot-4.png)
