@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Box, Text, Heading, Flex, Link, Image, Highlight, VStack, useColorModeValue } from '@chakra-ui/react'
+import { Box, Text, Heading, Flex, Image, Highlight, VStack, useColorModeValue } from '@chakra-ui/react'
 
 import bitcoin256 from '../../assets/images/bitcoin-256.png'
 
-// TODO: add CoinGecko API key only before deploying, and replace the key in the final version with example only
+import { API_KEY } from '../../utils/constants'
+
 const ROOT_URL = 'https://api.coingecko.com/api/v3'
 const URL_PARAMETER = '&x_cg_demo_api_key='
-const API_KEY = 'CG-ih8zbzkLnqwd6nYkJDbCwVeR'
 const PAGE_LIMIT = 4
 const SPARK_LINE = false
 

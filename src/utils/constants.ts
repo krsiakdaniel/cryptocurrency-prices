@@ -6,3 +6,6 @@ export const PAGE_WIDTH = {
   xl: '1280px',
   '2xl': '1536px',
 }
+
+// INSERT YOUR API KEY HERE
+export const API_KEY = ''

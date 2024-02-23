@@ -1,4 +1,4 @@
-import { Flex, Heading, Link, Highlight, useColorModeValue, Image, useColorMode } from '@chakra-ui/react'
+import { Flex, Heading, Link, Highlight, useColorModeValue, Image } from '@chakra-ui/react'
 
 import coinGecko from '../../assets/svg/coingecko-logo.svg'
 

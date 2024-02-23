@@ -3,7 +3,7 @@
 import { Box, Flex, Text, Button, Stack, useColorModeValue } from '@chakra-ui/react'
 
 import { ColorModeSwitcher } from '../../ColorModeSwitcher'
-import { PAGE_WIDTH } from '../../utils/constans'
+import { PAGE_WIDTH } from '../../utils/constants'
 import { FaDiscord, FaTwitter } from 'react-icons/fa'
 
 import { SocialButton } from '../../components/SocialButton'

@@ -4,7 +4,6 @@ import {
   Table,
   Heading,
   Image,
-  Stack,
   Thead,
   Tbody,
   Tr,
@@ -15,15 +14,14 @@ import {
   Flex,
   useColorModeValue,
   Link,
-  Skeleton,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { numberSeparateCommas } from '../../utils/numberSeparateCommas'
 
-// TODO: add CoinGecko API key only before deploying, and replace the key in the final version with example only
+import { API_KEY } from '../../utils/constants'
+
 const ROOT_URL = 'https://api.coingecko.com/api/v3'
 const URL_PARAMETER = '&x_cg_demo_api_key='
-const API_KEY = 'CG-ih8zbzkLnqwd6nYkJDbCwVeR'
 const PAGE_LIMIT = 500
 const SPARK_LINE = true
 

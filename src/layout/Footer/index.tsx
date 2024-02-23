@@ -3,7 +3,7 @@
 import { Box, Flex, Stack, Text, useColorModeValue, Link } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 
-import { PAGE_WIDTH } from '../../utils/constans'
+import { PAGE_WIDTH } from '../../utils/constants'
 
 import { SocialButton } from '../../components/SocialButton'
 

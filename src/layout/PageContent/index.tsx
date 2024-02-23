@@ -1,5 +1,5 @@
 import { Box, useColorModeValue } from '@chakra-ui/react'
-import { PAGE_WIDTH } from '../../utils/constans'
+import { PAGE_WIDTH } from '../../utils/constants'
 
 type Props = {
   children: React.ReactNode
