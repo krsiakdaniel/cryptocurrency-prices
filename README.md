@@ -2,20 +2,27 @@
 
 Find your favorite crypto currencies and it's current price! 💰
 
-## 🛠️ Tech Stack
-
-Website built with:
-
-- [Create React App](https://create-react-app.dev/)
-- [Chakra UI](https://chakra-ui.com/)
-- API: [CoinGecko](https://www.coingecko.com/)
-- deploy on: [Netlify](https://www.netlify.com/)
-
 ## ⚡ Project Website
 
 Website: <https://cryptomania-cryptocurrency-prices.netlify.app/>
 
-## 🛠️ Features
+## 🛠️ Tech Stack
+
+Using the following technologies.
+
+![javascript](tech-stack-logos/javascript.png) ![typescript](tech-stack-logos/typescript.png) ![react](tech-stack-logos/react.png) ![create-react-app](tech-stack-logos/create-react-app.png) ![chakra](tech-stack-logos/chakra.png) ![coingecko](tech-stack-logos/coingecko.png) ![netlify](tech-stack-logos/netlify.png)
+
+Website built with:
+
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React](https://react.dev/) - JavaScript library
+- [Create React App](https://create-react-app.dev/) - App starter
+- [Chakra UI](https://chakra-ui.com/) - React component library
+- [CoinGecko](https://www.coingecko.com/) - Cryptocurrency API
+- [Netlify](https://www.netlify.com/) - Deployment
+
+## 📝 Features
 
 - [x] display top 4 crypto currencies
 - [x] fetch data in table for 500 different currencies
@@ -48,10 +55,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Project screenshots.
 
-![screenshot-1](/screenshot-1.png)
+![screenshot-1](/screenshots/screenshot-1.png)
 
-![screenshot-2](/screenshot-2.png)
+![screenshot-2](/screenshots/screenshot-2.png)
 
-![screenshot-3](/screenshot-3.png)
+![screenshot-3](/screenshots/screenshot-3.png)
 
-![screenshot-4](/screenshot-4.png)
+![screenshot-4](/screenshots/screenshot-4.png)
