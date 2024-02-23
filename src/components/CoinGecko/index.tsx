@@ -6,7 +6,13 @@ export const CoinGecko = () => {
   const colorModeColors = useColorModeValue('green.400', 'pink.400')
 
   return (
-    <Flex mb={20} p={16} justifyContent="center" bg="yellow.300" borderRadius="lg">
+    <Flex
+      mb={20}
+      p={16}
+      justifyContent="center"
+      backgroundImage="linear-gradient(135deg, rgb(37, 163, 10),rgb(138, 191, 54),rgb(239, 219, 97))"
+      borderRadius="lg"
+    >
       <Flex alignItems="center" flexDirection="column">
         <Heading mb={8}>
           Powered by{' '}
