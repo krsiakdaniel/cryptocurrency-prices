@@ -8,4 +8,4 @@ export const PAGE_WIDTH = {
 }
 
 // INSERT YOUR API KEY HERE
-export const API_KEY = ''
+export const API_KEY = 'CG-ih8zbzkLnqwd6nYkJDbCwVeR'
