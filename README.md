@@ -13,7 +13,7 @@ Website built with:
 
 ## ⚡ Project Website
 
-Demo: <https://cryptomania-cryptocurrency-prices.netlify.app/>
+Website: <https://cryptomania-cryptocurrency-prices.netlify.app/>
 
 ## 🛠️ Features
 
