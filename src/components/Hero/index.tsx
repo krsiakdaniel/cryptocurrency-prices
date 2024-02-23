@@ -7,16 +7,17 @@ import bitcoin256 from '../../assets/images/bitcoin-256.png'
 const ROOT_URL = 'https://api.coingecko.com/api/v3'
 const URL_PARAMETER = '&x_cg_demo_api_key='
 const API_KEY = 'CG-ih8zbzkLnqwd6nYkJDbCwVeR'
+const PAGE_LIMIT = 4
+const SPARK_LINE = false
 
 interface CoinType {
   id: string
   image: string
   name: string
-  current_price: number
 }
 
 export const Hero = () => {
-  const urlCoins = `${ROOT_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=4&page=1&sparkline=false&locale=en${URL_PARAMETER}${API_KEY}`
+  const urlCoins = `${ROOT_URL}/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=${PAGE_LIMIT}&page=1&sparkline=${SPARK_LINE}&locale=en${URL_PARAMETER}${API_KEY}`
 
   const [coins, setCoins] = useState([])
   const [loading, setLoading] = useState(true)
@@ -37,8 +38,6 @@ export const Hero = () => {
       .catch((error) => console.error('Error:', error))
   }, [urlCoins])
 
-  const linkColor = useColorModeValue('green.400', 'pink.400')
-  const hoverColor = useColorModeValue('green.300', 'pink.300')
   const loadingColors = useColorModeValue('white', 'gray.800')
   const colorModeColors = useColorModeValue('green.400', 'pink.400')
 
@@ -63,7 +62,7 @@ export const Hero = () => {
       <Box mt={20}>
         {loading ? (
           <Flex width="full" mb={8} minH="275px" bgColor={loadingColors} alignItems="center" justifyContent="center">
-            <Text fontSize="lg">Loading coins...</Text>
+            <Text fontSize="lg">⏳ Loading coins...</Text>
           </Flex>
         ) : (
           <Box>
@@ -108,21 +107,8 @@ export const Hero = () => {
                       <Flex flexDirection="column">
                         <Box>
                           <Text fontSize="xl" fontWeight="bold">
-                            {coin.name}, ${coin.current_price}
+                            {coin.name}
                           </Text>
-                        </Box>
-                        <Box>
-                          <Link
-                            href={`https://www.coingecko.com/en/coins/${coin.id}`}
-                            isExternal
-                            color={linkColor}
-                            _hover={{
-                              textDecoration: 'underline',
-                              color: hoverColor,
-                            }}
-                          >
-                            More on CoinGecko
-                          </Link>
                         </Box>
                       </Flex>
                     </Flex>

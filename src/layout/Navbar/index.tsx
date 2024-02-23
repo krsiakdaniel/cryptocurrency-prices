@@ -18,7 +18,7 @@ export const Navbar = () => {
       bg={useColorModeValue('gray.50', 'gray.900')}
       borderBottom={1}
       borderStyle={'solid'}
-      borderColor={useColorModeValue('gray.200', 'gray.900')}
+      borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
       <Box
         mx="auto"
