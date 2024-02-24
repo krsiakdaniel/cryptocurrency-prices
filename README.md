@@ -24,8 +24,10 @@ Website built with:
 
 ## 📝 Features
 
+- [x] fetch data from API
 - [x] display top 4 crypto currencies
-- [x] fetch data in table for 500 different currencies
+- [x] render data in table for 500 different currencies
+- [x] pagination for table
 - [x] dark mode compatible ☀️ 🌑
 
 ## 💻 Scripts
