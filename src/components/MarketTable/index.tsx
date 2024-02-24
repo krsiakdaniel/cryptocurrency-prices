@@ -60,7 +60,7 @@ export const MarketTable = () => {
   const filteredCoins = coinsOnCurrentPage.filter((coin: CoinTypeMarket) =>
     coin.name.toLowerCase().includes(searchTerm.toLowerCase()),
   )
-  const noSearchResults = filteredCoins.length === 0
+  const hasSearchResults = filteredCoins.length > 0
 
   useEffect(() => {
     fetch(urlCoins, {
@@ -131,71 +131,73 @@ export const MarketTable = () => {
         </Flex>
 
         <Flex py={4}>
-          <Input placeholder="Search for a coin" value={searchTerm} onChange={handleSearchChange} />
+          <Input placeholder="Search for a coin name" value={searchTerm} onChange={handleSearchChange} />
         </Flex>
 
-        <TableContainer>
-          <Table size="sm" variant="simple" bg={colorTableRow}>
-            <Thead>
-              <Tr bg={bgTrRow}>
-                <Th fontSize="md" py={4} color={bgTrText}>
-                  Coin
-                </Th>
-                <Th fontSize="md" py={4} color={bgTrText} isNumeric>
-                  Price
-                </Th>
-                <Th fontSize="md" py={4} color={bgTrText} isNumeric>
-                  24h Change
-                </Th>
-                <Th fontSize="md" py={4} color={bgTrText} isNumeric>
-                  Market Cap
-                </Th>
-              </Tr>
-            </Thead>
-            <Tbody>
-              {filteredCoins &&
-                filteredCoins.map((coin: CoinTypeMarket) => {
-                  return (
-                    <Tr key={coin.id} _hover={{ background: colorTableRowHover }}>
-                      <Td width="200px" maxWidth="200px">
-                        <Flex alignItems="center">
-                          <Image boxSize="30px" mr={4} src={coin.image} alt={coin.name} />
-                          <Link
-                            href={`https://www.coingecko.com/en/coins/${coin.id}`}
-                            isExternal
-                            fontWeight="bold"
-                            color={linkColor}
-                            _hover={{
-                              textDecoration: 'underline',
-                              color: hoverColor,
-                            }}
-                          >
-                            {coin.name}
-                          </Link>
-                        </Flex>
-                      </Td>
-                      <Td width="200px" maxWidth="200px" isNumeric>
-                        ${numberSeparateCommas(coin.current_price)}
-                      </Td>
-                      <Td width="200px" maxWidth="200px" isNumeric fontWeight="bold">
-                        <Code
-                          colorScheme={coin.price_change_percentage_24h >= 0 ? 'green' : 'red'}
-                          children={`${coin.price_change_percentage_24h >= 0 ? '↑' : '↓'} ${coin.price_change_percentage_24h.toFixed(1)}%`}
-                          px={2}
-                          py={1}
-                        />
-                      </Td>
-                      <Td width="200px" maxWidth="200px" isNumeric>
-                        ${numberSeparateCommas(coin.market_cap)}
-                      </Td>
-                    </Tr>
-                  )
-                })}
-            </Tbody>
-          </Table>
-        </TableContainer>
-
-        {noSearchResults && <NoSearchResults />}
+        {hasSearchResults ? (
+          <TableContainer>
+            <Table size="sm" variant="simple" bg={colorTableRow}>
+              <Thead>
+                <Tr bg={bgTrRow}>
+                  <Th fontSize="md" py={4} color={bgTrText}>
+                    Coin
+                  </Th>
+                  <Th fontSize="md" py={4} color={bgTrText} isNumeric>
+                    Price
+                  </Th>
+                  <Th fontSize="md" py={4} color={bgTrText} isNumeric>
+                    24h Change
+                  </Th>
+                  <Th fontSize="md" py={4} color={bgTrText} isNumeric>
+                    Market Cap
+                  </Th>
+                </Tr>
+              </Thead>
+              <Tbody>
+                {filteredCoins &&
+                  filteredCoins.map((coin: CoinTypeMarket) => {
+                    return (
+                      <Tr key={coin.id} _hover={{ background: colorTableRowHover }}>
+                        <Td width="200px" maxWidth="200px">
+                          <Flex alignItems="center">
+                            <Image boxSize="30px" mr={4} src={coin.image} alt={coin.name} />
+                            <Link
+                              href={`https://www.coingecko.com/en/coins/${coin.id}`}
+                              isExternal
+                              fontWeight="bold"
+                              color={linkColor}
+                              _hover={{
+                                textDecoration: 'underline',
+                                color: hoverColor,
+                              }}
+                            >
+                              {coin.name}
+                            </Link>
+                          </Flex>
+                        </Td>
+                        <Td width="200px" maxWidth="200px" isNumeric>
+                          ${numberSeparateCommas(coin.current_price)}
+                        </Td>
+                        <Td width="200px" maxWidth="200px" isNumeric fontWeight="bold">
+                          <Code
+                            colorScheme={coin.price_change_percentage_24h >= 0 ? 'green' : 'red'}
+                            children={`${coin.price_change_percentage_24h >= 0 ? '↑' : '↓'} ${coin.price_change_percentage_24h.toFixed(1)}%`}
+                            px={2}
+                            py={1}
+                          />
+                        </Td>
+                        <Td width="200px" maxWidth="200px" isNumeric>
+                          ${numberSeparateCommas(coin.market_cap)}
+                        </Td>
+                      </Tr>
+                    )
+                  })}
+              </Tbody>
+            </Table>
+          </TableContainer>
+        ) : (
+          <NoSearchResults />
+        )}
       </Box>
     </Box>
   )
