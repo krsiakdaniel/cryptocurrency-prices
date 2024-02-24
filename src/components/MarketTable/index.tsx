@@ -14,6 +14,8 @@ import {
   Flex,
   useColorModeValue,
   Link,
+  ButtonGroup,
+  Button,
 } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { numberSeparateCommas } from '../../utils/numberSeparateCommas'
@@ -22,12 +24,23 @@ import { CoinTypeMarket } from '../../utils/constants'
 import { getUrlAPI } from '../../utils/getUrlAPI'
 
 const API_PAGE_LIMIT = 500
+const ITEMS_PER_PAGE = 50
 
 export const MarketTable = () => {
   const urlCoins = getUrlAPI(API_PAGE_LIMIT)
 
   const [coins, setCoins] = useState([])
   const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const pages = Math.ceil(coins.length / ITEMS_PER_PAGE)
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
+  const endIndex = startIndex + ITEMS_PER_PAGE
+  const coinsOnCurrentPage = coins.slice(startIndex, endIndex)
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page)
+  }
 
   useEffect(() => {
     fetch(urlCoins, {
@@ -49,6 +62,10 @@ export const MarketTable = () => {
   const colorTableRowHover = useColorModeValue('gray.100', 'gray.600')
   const linkColor = useColorModeValue('green.400', 'pink.400')
   const hoverColor = useColorModeValue('green.300', 'pink.300')
+  const bgTrRow = useColorModeValue('gray.50', 'gray.700')
+  const bgTrText = useColorModeValue('gray.800', 'white')
+  const bgButton = useColorModeValue('gray.200', 'gray.300')
+  const activeButtonColor = useColorModeValue('green.400', 'pink.400')
 
   return (
     <Box my={40}>
@@ -58,25 +75,62 @@ export const MarketTable = () => {
         </Flex>
       ) : (
         <Box>
-          <Heading mb={8} textTransform="uppercase" size={{ base: 'xl', sm: '2xl' }}>
-            Market Value
-          </Heading>
+          <Flex
+            justifyContent="space-between"
+            alignItems="center"
+            py={2}
+            borderBottom="1px solid"
+            borderColor="gray.200"
+            flexDirection={{ base: 'column', sm: 'row' }}
+          >
+            <Flex>
+              <Heading textTransform="uppercase" size={{ base: 'md', sm: 'lg' }} pb={{ base: 2, sm: 0 }}>
+                Market Value
+              </Heading>
+            </Flex>
+            <ButtonGroup spacing="2">
+              {Array.from({ length: pages }, (_, i) => (
+                <Button
+                  key={i}
+                  onClick={() => handlePageChange(i + 1)}
+                  bg={i + 1 === currentPage ? activeButtonColor : bgButton}
+                  size="sm"
+                  color={i + 1 === currentPage ? 'white' : 'gray.600'}
+                  _hover={{
+                    color: 'white',
+                    bgColor: hoverColor,
+                  }}
+                >
+                  {i + 1}
+                </Button>
+              ))}
+            </ButtonGroup>
+          </Flex>
+
           <TableContainer>
             <Table size="sm" variant="simple" bg={colorTableRow}>
               <Thead>
-                <Tr>
-                  <Th>Coin</Th>
-                  <Th isNumeric>Price</Th>
-                  <Th isNumeric>24h Change</Th>
-                  <Th isNumeric>Market Cap</Th>
+                <Tr bg={bgTrRow}>
+                  <Th fontSize="md" py={4} color={bgTrText}>
+                    Coin
+                  </Th>
+                  <Th fontSize="md" py={4} color={bgTrText} isNumeric>
+                    Price
+                  </Th>
+                  <Th fontSize="md" py={4} color={bgTrText} isNumeric>
+                    24h Change
+                  </Th>
+                  <Th fontSize="md" py={4} color={bgTrText} isNumeric>
+                    Market Cap
+                  </Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {coins &&
-                  coins.map((coin: CoinTypeMarket) => {
+                {coinsOnCurrentPage &&
+                  coinsOnCurrentPage.map((coin: CoinTypeMarket) => {
                     return (
                       <Tr key={coin.id} _hover={{ background: colorTableRowHover }}>
-                        <Td>
+                        <Td width="200px" maxWidth="200px">
                           <Flex alignItems="center">
                             <Image boxSize="30px" mr={4} src={coin.image} alt={coin.name} />
                             <Link
@@ -93,8 +147,10 @@ export const MarketTable = () => {
                             </Link>
                           </Flex>
                         </Td>
-                        <Td isNumeric>${numberSeparateCommas(coin.current_price)}</Td>
-                        <Td isNumeric fontWeight="bold">
+                        <Td width="200px" maxWidth="200px" isNumeric>
+                          ${numberSeparateCommas(coin.current_price)}
+                        </Td>
+                        <Td width="200px" maxWidth="200px" isNumeric fontWeight="bold">
                           <Code
                             colorScheme={coin.price_change_percentage_24h >= 0 ? 'green' : 'red'}
                             children={`${coin.price_change_percentage_24h >= 0 ? '↑' : '↓'} ${coin.price_change_percentage_24h.toFixed(1)}%`}
@@ -102,7 +158,9 @@ export const MarketTable = () => {
                             py={1}
                           />
                         </Td>
-                        <Td isNumeric>${numberSeparateCommas(coin.market_cap)}</Td>
+                        <Td width="200px" maxWidth="200px" isNumeric>
+                          ${numberSeparateCommas(coin.market_cap)}
+                        </Td>
                       </Tr>
                     )
                   })}

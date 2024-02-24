@@ -4,7 +4,7 @@ Find your favorite crypto currencies and it's current price! 💰
 
 ## ⚡ Project Website
 
-Website: <https://cryptomania-cryptocurrency-prices.netlify.app/>
+Website: <https://cryptomania-currency-prices.netlify.app/>
 
 ## 🛠️ Tech Stack
 

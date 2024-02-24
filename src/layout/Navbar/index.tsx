@@ -14,7 +14,7 @@ export const Navbar = () => {
       as="header"
       position="fixed"
       w="full"
-      zIndex={1}
+      zIndex={2}
       bg={useColorModeValue('gray.50', 'gray.900')}
       borderBottom={1}
       borderStyle={'solid'}
