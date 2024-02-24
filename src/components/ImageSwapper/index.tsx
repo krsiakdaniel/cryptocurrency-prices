@@ -7,7 +7,7 @@ import ethereum256 from '../../assets/images/ethereum-256.png'
 import tether256 from '../../assets/images/tether-256.png'
 import binance256 from '../../assets/images/binance-256.png'
 
-const TIME_INTERVAL = 2000
+const TIME_INTERVAL = 1500
 
 export const ImageSwapper = () => {
   const imageUrls = [bitcoin256, ethereum256, tether256, binance256]

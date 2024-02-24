@@ -74,7 +74,7 @@ export const MarketTopCoins = () => {
                       _last={{ mb: 0 }}
                     >
                       <Box mb={4}>
-                        <Image boxSize="128px" src={coin.image} alt={coin.name} />
+                        <Image boxSize={{ base: '96px', md: '128px' }} src={coin.image} alt={coin.name} />
                       </Box>
 
                       <Flex flexDirection="column">
