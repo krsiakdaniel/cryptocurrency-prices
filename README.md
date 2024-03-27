@@ -4,13 +4,13 @@ Find your favorite crypto currencies and it's current price! 💰
 
 ## ⚡ Project Website
 
-Website: <https://cryptomania-currency-prices.netlify.app/>
+Website: <https://cryptocurrency-prices-one.vercel.app/>
 
 ## 🛠️ Tech Stack
 
 Using the following technologies.
 
-![javascript](tech-stack-logos/javascript.png) ![typescript](tech-stack-logos/typescript.png) ![react](tech-stack-logos/react.png) ![create-react-app](tech-stack-logos/create-react-app.png) ![chakra](tech-stack-logos/chakra.png) ![coingecko](tech-stack-logos/coingecko.png) ![netlify](tech-stack-logos/netlify.png)
+![javascript](tech-stack-logos/javascript.png) ![typescript](tech-stack-logos/typescript.png) ![react](tech-stack-logos/react.png) ![create-react-app](tech-stack-logos/create-react-app.png) ![chakra](tech-stack-logos/chakra.png) ![coingecko](tech-stack-logos/coingecko.png) ![vercel](tech-stack-logos/vercel.png)
 
 Website built with:
 
@@ -20,7 +20,7 @@ Website built with:
 - [Create React App](https://create-react-app.dev/) - App starter
 - [Chakra UI](https://chakra-ui.com/) - React component library
 - [CoinGecko](https://www.coingecko.com/) - Cryptocurrency API
-- [Netlify](https://www.netlify.com/) - Deployment
+- [Vercel](https://www.vercel.com/) - Deployment
 
 ## 📝 Features
 
