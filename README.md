@@ -46,6 +46,20 @@ npm start
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+### ℹ️ Specific older dependencies
+
+_This is older demo_ and it would need major app code refactor if updated to the latest Chakra UI.
+
+```txt
+🔒 locked at "@chakra-ui/react": "2.10.4"
+```
+
+TypeScript version 5 and above has conflict with peer dependency that needs `4.9.5`.
+
+```txt
+🔒 locked at "typescript": "4.9.5"
+```
+
 ## 🔑 API Key
 
 1. Get CoinGecko [API KEY](https://support.coingecko.com/hc/en-us/articles/21880397454233-User-Guide-How-to-sign-up-for-CoinGecko-Demo-API-and-generate-an-API-key)
