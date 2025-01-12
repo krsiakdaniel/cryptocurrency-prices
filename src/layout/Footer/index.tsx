@@ -7,6 +7,16 @@ import { PAGE_WIDTH } from '../../utils/constants'
 
 import { SocialButton } from '../../components/SocialButton'
 
+/**
+ * Gets the current year.
+ *
+ * @returns {number} - The current year.
+ */
+
+const getCurrentYear = (): number => {
+  return new Date().getFullYear()
+}
+
 export const Footer = () => {
   return (
     <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
@@ -31,7 +41,7 @@ export const Footer = () => {
         >
           <Flex direction={{ base: 'column', sm: 'row' }} alignItems="center">
             <Text mr={{ base: 0, sm: 2 }} mb={{ base: 2, sm: 0 }}>
-              © 2024 CryptoMania
+              Copyright © {getCurrentYear()} CryptoMania
             </Text>
             <Text display={{ base: 'none', sm: 'block' }} mr={2}>
               |
