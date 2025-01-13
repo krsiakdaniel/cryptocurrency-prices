@@ -1,10 +1,10 @@
 'use client'
 
-import { Box, Flex, Text, Button, Stack, useColorModeValue } from '@chakra-ui/react'
+import { Alert, Box, Button, Flex, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 
+import { FaDiscord, FaTwitter } from 'react-icons/fa'
 import { ColorModeSwitcher } from '../../ColorModeSwitcher'
 import { PAGE_WIDTH } from '../../utils/constants'
-import { FaDiscord, FaTwitter } from 'react-icons/fa'
 
 import { SocialButton } from '../../components/SocialButton'
 
@@ -20,6 +20,26 @@ export const Navbar = () => {
       borderStyle={'solid'}
       borderColor={useColorModeValue('gray.200', 'gray.600')}
     >
+      <Alert status="warning" title="Project Alert" variant="top-accent" py={8} px={4} fontSize="xl">
+        <Flex direction={{ base: 'column', xl: 'row' }} align="center">
+          <Text align="center">
+            This is older and simple demo. <strong>For real production value code visit:</strong>
+            <Link
+              href="https://github.com/krsiakdaniel/portfolio-website-krsiak-cz"
+              pl={2}
+              textDecoration="underline"
+              fontWeight="bold"
+              _hover={{
+                textDecoration: 'none',
+              }}
+              isExternal
+            >
+              GitHub /portfolio-website-krsiak-cz
+            </Link>
+          </Text>
+        </Flex>
+      </Alert>
+
       <Box
         mx="auto"
         maxWidth={{
