@@ -1,5 +1,5 @@
+import { Box, Flex, Heading, Highlight, Image, Text, useColorModeValue } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
-import { Box, Text, Heading, Flex, Image, Highlight, useColorModeValue } from '@chakra-ui/react'
 
 import { CoinType } from '../../utils/constants'
 import { getUrlAPI } from '../../utils/getUrlAPI'
@@ -48,10 +48,10 @@ export const MarketTopCoins = () => {
               mt={8}
             >
               <Highlight
-                query="crypto currencies"
+                query="✨ crypto currencies ✨"
                 styles={{ px: '2', py: '1', rounded: 'full', bg: colorModeColors, color: 'white' }}
               >
-                ✨ Top 4 crypto currencies by market cap ✨
+                ✨ Crypto Currencies ✨ Top 4 by&nbsp;Market Cap
               </Highlight>
             </Heading>
 

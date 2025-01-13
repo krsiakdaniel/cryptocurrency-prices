@@ -1,22 +1,15 @@
 'use client'
 
-import { Box, Flex, Stack, Text, useColorModeValue, Link } from '@chakra-ui/react'
+import { Box, Flex, Link, Stack, Text, useColorModeValue } from '@chakra-ui/react'
 import { FaGithub } from 'react-icons/fa'
 
 import { PAGE_WIDTH } from '../../utils/constants'
 
 import { SocialButton } from '../../components/SocialButton'
 
-/**
- * Gets the current year.
- *
- * @returns {number} - The current year.
- */
+import { getCurrentYear } from '../../utils/getCurrentYear'
 
-const getCurrentYear = (): number => {
-  return new Date().getFullYear()
-}
-
+// FIXME: make the footer responsive
 export const Footer = () => {
   return (
     <Box bg={useColorModeValue('gray.50', 'gray.900')} color={useColorModeValue('gray.700', 'gray.200')}>
@@ -39,11 +32,11 @@ export const Footer = () => {
           justify={{ base: 'center', md: 'space-between' }}
           align={{ base: 'center', md: 'center' }}
         >
-          <Flex direction={{ base: 'column', sm: 'row' }} alignItems="center">
-            <Text mr={{ base: 0, sm: 2 }} mb={{ base: 2, sm: 0 }}>
+          <Flex direction={{ base: 'column', md: 'row' }} alignItems="center">
+            <Text mr={{ base: 0, sm: 2 }} mb={{ base: 2, md: 0 }}>
               Copyright © {getCurrentYear()} CryptoMania
             </Text>
-            <Text display={{ base: 'none', sm: 'block' }} mr={2}>
+            <Text display={{ base: 'none', md: 'block' }} mr={2}>
               |
             </Text>
             <Text>
