@@ -6,6 +6,10 @@ Find your favorite crypto currencies and it's current price! 💰
 
 Website: <https://cryptocurrency-prices-one.vercel.app/>
 
+## ❗⭐ ARCHIVED - "READ ONLY" PROJECT ❗⭐
+
+> This "CRYPTO SITE" is an older and simple demo. For real production value code visit: <https://github.com/krsiakdaniel/portfolio-website-krsiak-cz>
+
 ## 🛠️ Tech Stack
 
 Using the following technologies.
